@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5DBC1B682AD88F0A00296A5C /* GuessWhereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC1B672AD88F0A00296A5C /* GuessWhereApp.swift */; };
-		5DBC1B6A2AD88F0A00296A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC1B692AD88F0A00296A5C /* ContentView.swift */; };
+		5DBC1B6A2AD88F0A00296A5C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC1B692AD88F0A00296A5C /* GameView.swift */; };
 		5DBC1B6C2AD88F0C00296A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC1B6B2AD88F0C00296A5C /* Assets.xcassets */; };
 		5DBC1B702AD88F0C00296A5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC1B6F2AD88F0C00296A5C /* Preview Assets.xcassets */; };
+		5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D72AD9C16300667DC2 /* MapView.swift */; };
+		5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DBC1B642AD88F0A00296A5C /* GuessWhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessWhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBC1B672AD88F0A00296A5C /* GuessWhereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessWhereApp.swift; sourceTree = "<group>"; };
-		5DBC1B692AD88F0A00296A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5DBC1B692AD88F0A00296A5C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5DBC1B6B2AD88F0C00296A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DBC1B6D2AD88F0C00296A5C /* GuessWhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GuessWhere.entitlements; sourceTree = "<group>"; };
 		5DBC1B6F2AD88F0C00296A5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5DCFC6D72AD9C16300667DC2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,11 @@
 		5DBC1B662AD88F0A00296A5C /* GuessWhere */ = {
 			isa = PBXGroup;
 			children = (
+				5DCFC6D22AD9C10300667DC2 /* Models */,
+				5DCFC6D12AD9C0FB00667DC2 /* Views */,
+				5DBC1B692AD88F0A00296A5C /* GameView.swift */,
+				5DCFC6D32AD9C10D00667DC2 /* ViewModels */,
 				5DBC1B672AD88F0A00296A5C /* GuessWhereApp.swift */,
-				5DBC1B692AD88F0A00296A5C /* ContentView.swift */,
 				5DBC1B6B2AD88F0C00296A5C /* Assets.xcassets */,
 				5DBC1B6D2AD88F0C00296A5C /* GuessWhere.entitlements */,
 				5DBC1B6E2AD88F0C00296A5C /* Preview Content */,
@@ -67,6 +74,37 @@
 				5DBC1B6F2AD88F0C00296A5C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DCFC6D12AD9C0FB00667DC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFC6D42AD9C12A00667DC2 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5DCFC6D22AD9C10300667DC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5DCFC6D32AD9C10D00667DC2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5DCFC6D42AD9C12A00667DC2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFC6D72AD9C16300667DC2 /* MapView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DBC1B6A2AD88F0A00296A5C /* ContentView.swift in Sources */,
+				5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */,
+				5DBC1B6A2AD88F0A00296A5C /* GameView.swift in Sources */,
+				5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */,
 				5DBC1B682AD88F0A00296A5C /* GuessWhereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
