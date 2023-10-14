@@ -13,6 +13,7 @@
 		5DBC1B702AD88F0C00296A5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBC1B6F2AD88F0C00296A5C /* Preview Assets.xcassets */; };
 		5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D72AD9C16300667DC2 /* MapView.swift */; };
 		5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */; };
+		5DCFC6DF2ADA2F5200667DC2 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCFC6DE2ADA2F5200667DC2 /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCFC6DF2ADA2F5200667DC2 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +125,9 @@
 			dependencies = (
 			);
 			name = GuessWhere;
+			packageProductDependencies = (
+				5DCFC6DE2ADA2F5200667DC2 /* AlertToast */,
+			);
 			productName = GuessWhere;
 			productReference = 5DBC1B642AD88F0A00296A5C /* GuessWhere.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 5DBC1B5B2AD88F0A00296A5C;
+			packageReferences = (
+				5DCFC6DD2ADA2F5200667DC2 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 5DBC1B652AD88F0A00296A5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DCFC6DD2ADA2F5200667DC2 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DCFC6DE2ADA2F5200667DC2 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DCFC6DD2ADA2F5200667DC2 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5DBC1B5C2AD88F0A00296A5C /* Project object */;
 }

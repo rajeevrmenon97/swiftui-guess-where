@@ -7,10 +7,15 @@
 
 import SwiftUI
 import MapKit
+import AlertToast
 
 struct GameView: View {
     
     @StateObject private var gameViewModel = GameViewModel()
+    @State private var buttonLabel = "Submit"
+    
+    let subLabel = "Submit"
+    let nextLabel = " Next "
     
     var body: some View {
         GeometryReader { geometryReader in
@@ -28,20 +33,28 @@ struct GameView: View {
                     
                     Spacer()
                     
-                    VStack {
-                        Button(action: {
-                            withAnimation {
-                                gameViewModel.finishTurn()
+                    Button(action: {
+                        withAnimation {
+                            if buttonLabel == subLabel {
+                                if gameViewModel.pinLocation != nil {
+                                    gameViewModel.finishRound()
+                                    buttonLabel = nextLabel
+                                }
+                            } else {
+                                buttonLabel = subLabel
+                                gameViewModel.nextRound()
                             }
-                        }, label: {
-                            Text("Submit")
-                        })
-                        .buttonStyle(.bordered)
-                    }
+                        }
+                    }, label: {
+                        Text(buttonLabel)
+                    })
+                    .buttonStyle(.bordered)
                 }
                 .padding([.leading, .trailing])
-                
             }
+        }
+        .toast(isPresenting: $gameViewModel.isToastShown){
+            AlertToast(type: .complete(.primary), title: "You were \(gameViewModel.distance) away")
         }
         .navigationTitle(gameViewModel.targetCity != nil ? gameViewModel.targetCity!: "Loading..")
         .navigationBarTitleDisplayMode(.inline)

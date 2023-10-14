@@ -13,8 +13,6 @@ struct MapView: View {
     
     var body: some View {
         MapReader { mapReader in
-
-            
             Map(position: $gameViewModel.mapPosition) {
                 if gameViewModel.pinLocation != nil {
                     Marker("Your pin", coordinate: gameViewModel.pinLocation!)
