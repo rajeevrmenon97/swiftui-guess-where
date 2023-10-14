@@ -16,6 +16,8 @@
 		5DCFC6DF2ADA2F5200667DC2 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCFC6DE2ADA2F5200667DC2 /* AlertToast */; };
 		5DCFC6E12ADA331D00667DC2 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E02ADA331D00667DC2 /* MainMenuView.swift */; };
 		5DCFC6E42ADA373900667DC2 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */; };
+		5DCFC6E62ADA3B9B00667DC2 /* GeoNamesApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E52ADA3B9B00667DC2 /* GeoNamesApiService.swift */; };
+		5DCFC6E82ADA3BEB00667DC2 /* GeoNamesApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E72ADA3BEB00667DC2 /* GeoNamesApiResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		5DCFC6E02ADA331D00667DC2 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		5DCFC6E52ADA3B9B00667DC2 /* GeoNamesApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoNamesApiService.swift; sourceTree = "<group>"; };
+		5DCFC6E72ADA3BEB00667DC2 /* GeoNamesApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoNamesApiResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		5DCFC6D22AD9C10300667DC2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5DCFC6E72ADA3BEB00667DC2 /* GeoNamesApiResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */,
+				5DCFC6E52ADA3B9B00667DC2 /* GeoNamesApiService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */,
 				5DBC1B6A2AD88F0A00296A5C /* GameView.swift in Sources */,
 				5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */,
+				5DCFC6E82ADA3BEB00667DC2 /* GeoNamesApiResponse.swift in Sources */,
 				5DBC1B682AD88F0A00296A5C /* GuessWhereApp.swift in Sources */,
+				5DCFC6E62ADA3B9B00667DC2 /* GeoNamesApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

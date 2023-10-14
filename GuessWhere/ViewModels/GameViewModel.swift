@@ -8,29 +8,41 @@
 import Foundation
 import MapKit
 import SwiftUI
+import Combine
 
 class GameViewModel: ObservableObject {
     @Published var pinLocation: CLLocationCoordinate2D? = nil
     @Published var targetLocation: CLLocationCoordinate2D? = nil
     @Published var isSubmitted: Bool = false
-    @Published var targetCity: String? = nil
+    @Published var targetName: String? = nil
     @Published var mapPosition: MapCameraPosition = .automatic
     @Published var isToastShown: Bool = false
     @Published var distance: String = ""
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     init() {
         self.setNextRound()
     }
     
     func setNextRound() {
+        GeoNamesApiService.getRandomLocation()
+            .replaceError(with: nil)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { response in
+                guard let location = response else {return}
+                self.targetLocation = CLLocationCoordinate2D(latitude: Double(location.major.inlatt)!, longitude: Double(location.major.inlongt)!)
+                self.targetName = location.major.name
+            }).store(in: &cancellables)
+        
         mapPosition = MapCameraPosition.region(
             MKCoordinateRegion(
                 center: CLLocationCoordinate2D(
                     latitude: 40.484885,
                     longitude: -101.476607),
                 span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50)))
-        targetLocation = CLLocationCoordinate2D(latitude: 37.0598, longitude: -104.8090)
-        targetCity = "Alamosa Canyon"
+//        targetLocation = CLLocationCoordinate2D(latitude: 37.0598, longitude: -104.8090)
+//        targetCity = "Alamosa Canyon"
     }
     
     func finishRound() {

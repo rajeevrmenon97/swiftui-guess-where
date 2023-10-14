@@ -19,7 +19,7 @@ struct MapView: View {
                 }
                 
                 if gameViewModel.isSubmitted {
-                    Marker(gameViewModel.targetCity!, coordinate: gameViewModel.targetLocation!)
+                    Marker(gameViewModel.targetName!, coordinate: gameViewModel.targetLocation!)
                     MapPolyline(coordinates: [gameViewModel.pinLocation!, gameViewModel.targetLocation!])
                         .stroke(.black)
                         

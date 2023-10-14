@@ -73,7 +73,7 @@ struct GameView: View {
                 NotificationCenter.default.removeObserver(observer)
             }
         }
-        .navigationTitle(gameViewModel.targetCity != nil ? gameViewModel.targetCity!: "Loading..")
+        .navigationTitle(gameViewModel.targetName != nil ? gameViewModel.targetName!: "Loading..")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
