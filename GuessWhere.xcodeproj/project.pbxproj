@@ -14,6 +14,8 @@
 		5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D72AD9C16300667DC2 /* MapView.swift */; };
 		5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */; };
 		5DCFC6DF2ADA2F5200667DC2 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5DCFC6DE2ADA2F5200667DC2 /* AlertToast */; };
+		5DCFC6E12ADA331D00667DC2 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E02ADA331D00667DC2 /* MainMenuView.swift */; };
+		5DCFC6E42ADA373900667DC2 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		5DBC1B6F2AD88F0C00296A5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DCFC6D72AD9C16300667DC2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5DCFC6D92AD9C35200667DC2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		5DCFC6E02ADA331D00667DC2 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,9 @@
 		5DBC1B662AD88F0A00296A5C /* GuessWhere */ = {
 			isa = PBXGroup;
 			children = (
+				5DCFC6E22ADA372200667DC2 /* Services */,
 				5DCFC6D22AD9C10300667DC2 /* Models */,
 				5DCFC6D12AD9C0FB00667DC2 /* Views */,
-				5DBC1B692AD88F0A00296A5C /* GameView.swift */,
 				5DCFC6D32AD9C10D00667DC2 /* ViewModels */,
 				5DBC1B672AD88F0A00296A5C /* GuessWhereApp.swift */,
 				5DBC1B6B2AD88F0C00296A5C /* Assets.xcassets */,
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCFC6D42AD9C12A00667DC2 /* Components */,
+				5DCFC6E02ADA331D00667DC2 /* MainMenuView.swift */,
+				5DBC1B692AD88F0A00296A5C /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +113,14 @@
 				5DCFC6D72AD9C16300667DC2 /* MapView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5DCFC6E22ADA372200667DC2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFC6E32ADA373900667DC2 /* PushNotificationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCFC6E42ADA373900667DC2 /* PushNotificationService.swift in Sources */,
+				5DCFC6E12ADA331D00667DC2 /* MainMenuView.swift in Sources */,
 				5DCFC6DA2AD9C35200667DC2 /* GameViewModel.swift in Sources */,
 				5DBC1B6A2AD88F0A00296A5C /* GameView.swift in Sources */,
 				5DCFC6D82AD9C16300667DC2 /* MapView.swift in Sources */,

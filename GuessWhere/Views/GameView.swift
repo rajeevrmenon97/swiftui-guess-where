@@ -13,6 +13,8 @@ struct GameView: View {
     
     @StateObject private var gameViewModel = GameViewModel()
     @State private var buttonLabel = "Submit"
+    @State private var notificationObserver: NSObjectProtocol?
+    @EnvironmentObject private var notificationService: PushNotificationService
     
     let subLabel = "Submit"
     let nextLabel = " Next "
@@ -21,8 +23,7 @@ struct GameView: View {
         GeometryReader { geometryReader in
             VStack {
                 MapView(gameViewModel: gameViewModel)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing, .bottom])
+                    .padding(.bottom)
                 
                 HStack {
                     
@@ -56,13 +57,23 @@ struct GameView: View {
         .toast(isPresenting: $gameViewModel.isToastShown){
             AlertToast(type: .complete(.primary), title: "You were \(gameViewModel.distance) away")
         }
+        .onAppear {
+            if notificationService.isPermissionGranted {
+                notificationObserver = NotificationCenter.default.addObserver(
+                    forName: UIApplication.willResignActiveNotification, object: nil, queue: .main)
+                { _ in
+                    notificationService.scheduleNotification(
+                        title: "Guess Where",
+                        subtitle: "Game in progress. Get back to it!")
+                }
+            }
+        }
+        .onDisappear {
+            if let observer = notificationObserver {
+                NotificationCenter.default.removeObserver(observer)
+            }
+        }
         .navigationTitle(gameViewModel.targetCity != nil ? gameViewModel.targetCity!: "Loading..")
         .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-#Preview {
-    NavigationStack {
-        GameView()
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct GuessWhereApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView()
+            MainMenuView()
         }
     }
 }
